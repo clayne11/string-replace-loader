@@ -1,12 +1,19 @@
 var _ = require('lodash');
 var utils = require('loader-utils');
 
+
 function processQuery(source, query) {
   if (!_.isUndefined(query.search) && !_.isUndefined(query.replace)) {
     if (!_.isUndefined(query.flags)) {
-      query.search = new RegExp(query.search, query.flags);
+      if(query.search.toString().indexOf('/g') == -1) {
+       //console.log(query.search + ':not found');
+       query.search = new RegExp(query.search, query.flags);
+      } else {
+        //console.log(query.search);
+        query.search = new RegExp(query.search);
+      }
     }
-
+    //console.log(source,query.search, query.replace);
     source = source.replace(query.search, query.replace);
   }
 
