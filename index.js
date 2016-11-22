@@ -20,7 +20,7 @@ function processQuery(source, query) {
   return source;
 }
 
-module.exports = function (source) {
+module.exports.pitch = function (source) {
   this.cacheable();
 
   var query = utils.parseQuery(this.query);
