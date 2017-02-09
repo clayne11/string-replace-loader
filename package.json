@@ -1,5 +1,5 @@
 {
-  "name": "string-replace-loader",
+  "name": "@clayne/string-replace-loader",
   "version": "1.0.5",
   "description": "Replace loader for Webpack",
   "keywords": [
