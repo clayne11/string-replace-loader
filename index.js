@@ -21,7 +21,7 @@ function processQuery(source, query) {
 module.exports = function (source) {
   this.cacheable();
 
-  var query = this.query
+  var query = this.options || this.query
 
   if (_.isArray(query.multiple)) {
     query.multiple.forEach(function (subquery) {
